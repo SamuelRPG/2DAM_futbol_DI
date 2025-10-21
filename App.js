@@ -14,7 +14,7 @@ const App = () => {
     unlockScreenOerientation()
   }, [])
 
-
+// Pantalla Principal
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
