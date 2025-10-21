@@ -1,3 +1,4 @@
+import {React, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import * as ScreenOrientation from 'expo-screen-orientation';
@@ -16,10 +17,10 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titol}>Llistat de partits:</Text>
       <StatusBar style="auto" />
+      <Text style={styles.titol}>Llistat de partits:</Text>
       <View style={{flex:0.25}}>
-        <InfoEquip nom="Valencia C.F." />
+        <Text style={{fontSize:18}}>Valencia</Text>
       </View>
     </View>
   );
@@ -28,9 +29,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    margin:5,
+    padding: 5,
     backgroundColor: "#fff",
   },
   titol: {
+    margin: 5,
     fontSize: 25,
     fontWeight: "bold",
 
