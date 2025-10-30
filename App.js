@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const App = () => {
 
 
-
+  
 // Pantalla Principal
   return (
     <View style={styles.container}>
