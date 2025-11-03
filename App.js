@@ -1,18 +1,35 @@
-import {React, useEffect} from 'react';
+import { React, useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import InfoEquips from './components/InfoEquips';
+import InfoPartit from './components/InfoPartit';
+import BarraDeBusqueda from './components/BarraDeBusqueda';
+import { Searchbar } from 'react-native-paper';
 const App = () => {
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredEquips, setFilteredEquips] = useState([]);
 
-  
-// Pantalla Principal
+  const handleOnPress = () => {
+    console.log(searchQuery);
+  }
+  // Pantalla Principal
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text style={styles.titol}>Llistat de partits:</Text>
-      <View style={{flex:0.25}}>
-        <InfoEquips nom="Levante"/>
+      <View>
+        <Searchbar
+          placeholder="Search"
+          onChangeText={(newValue) => setSearchQuery(newValue)}
+          value={searchQuery}
+          onIconPress={handleOnPress}
+        />
+      </View>
+      <View style={{ flex: 0.25 }}>
+        <InfoPartit local="Barcelona" visitante="Valencia" hora="18:30" estadio="Mestalla" />
+      </View>
+      <View style={{ flex: 0.25 }}>
+        <InfoPartit local="Girona" visitante="Levante" hora="18:30" estadio="Mestalla" />
       </View>
     </View>
   );
@@ -21,7 +38,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin:5,
+    margin: 5,
     padding: 5,
     backgroundColor: "#fff",
   },
