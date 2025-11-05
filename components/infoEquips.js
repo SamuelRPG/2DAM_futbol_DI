@@ -17,12 +17,6 @@ const InfoEquips = (props) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-    margin:5,
-    padding: 5,
-    backgroundColor: "#fff",
-  },
   contenedorPartidos: {
     justifyContent: "center", 
     alignContent: "center",
@@ -32,6 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 15, 
     backgroundColor: "yellow",
     padding: 25,
+    margin: 20,
   },
 })
 

@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import InfoPartit from './components/InfoPartit';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
 import { Searchbar } from 'react-native-paper';
@@ -14,6 +14,7 @@ const App = () => {
   }
   // Pantalla Principal
   return (
+    <ScrollView>
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text style={styles.titol}>Llistat de partits:</Text>
@@ -25,13 +26,13 @@ const App = () => {
           onIconPress={handleOnPress}
         />
       </View>
-      <View style={{ flex: 0.25 }}>
+      <View>
         <InfoPartit local="Barcelona" visitante="Valencia" hora="18:30" estadio="Mestalla" />
-      </View>
-      <View style={{ flex: 0.25 }}>
         <InfoPartit local="Girona" visitante="Levante" hora="18:30" estadio="Mestalla" />
+        <InfoPartit local="Mallorca" visitante="Elche" hora="18:30" estadio="Mestalla" />
       </View>
     </View>
+    </ScrollView>
   );
 };
 

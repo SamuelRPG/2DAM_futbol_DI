@@ -27,10 +27,14 @@ const getNomEquip = (unEquipObj)=>{
    return unEquipObj.strTeam;
 }
 
+export const getCapEstadio = (unEquipObj) => {
+return unEquipObj.intStadiumCapacity;
+}
+
 //obtinc la fitxa de l'equip.
 //La fitxa consisteix en un objecte amb els atributs: nom,imatgeEscut,anyFundacio,estadi
 export const getFitxaEquip = (unEquipObj)=>{
-   let objDevuelto = { nombre: unEquipObj.strTeam, imagenLogo: unEquipObj.strBadge, anyFundacion: unEquipObj.intFormedYear, estadio: unEquipObj.strStadium};
+   let objDevuelto = { nombre: unEquipObj.strTeam, imagenLogo: unEquipObj.strBadge, anyFundacion: unEquipObj.intFormedYear, estadio: unEquipObj.strStadium, capEstadio: unEquipObj.intStadiumCapacity};
    return objDevuelto;
 }
 
